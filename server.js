@@ -1,5 +1,5 @@
 const http = require('http');
-const fs = require('http');
+const fs = require('fs');
 const url = require('url');
 
 
@@ -8,7 +8,7 @@ http.createServer((request, response) => {
       q = url.parse(addr, true),
       filePath = '';
       if (q.pathname.includes('documentation')) {
-        filepath = (_dirname + '/documentation.html');
+        filepath = (__dirname + '/documentation.html');
       } else {
         filePath = 'index.html';
       }
@@ -23,7 +23,7 @@ http.createServer((request, response) => {
         response.end();
 
       });
-      
+
       fs.appendFile('log.txt', 'URL: ' + addr + '\nTimestamp: ' + new Date() + '\n\n', (err) => {
         if (err) {
           console.log(err);

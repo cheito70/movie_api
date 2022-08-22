@@ -1,13 +1,19 @@
 const express = require('express');
   morgan = require('morgan');
+  fs = require('fs'),
+  path = require('path');
 
 const app = express();
+
+const bodyParser = require('body-parser'),
+  methodOverride = require('method-override');
+
 
 //Create a write stream in append mode. Also a 'log.txt' file is created in root.
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a'})
 
-app.use(morgan('combined')); //sets up logger midware function to terminal
+app.use(morgan('combined', {stream: accessLogStream})); //sets up logger midware function to terminal
 
 app.use(express.static('public')); //Automatically routes all requests for static files  to corresponding folder on server
 

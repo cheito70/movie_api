@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 
 const bodyParser = require('body-parser'),
-  methodOverride = require('method-override');
+  //methodOverride = require('method-override');
 
 
 //Create a write stream in append mode. Also a 'log.txt' file is created in root.
@@ -17,6 +17,8 @@ app.use(morgan('combined', {stream: accessLogStream})); //sets up logger midware
 
 app.use(express.static('public')); //Automatically routes all requests for static files  to corresponding folder on server
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
 
 //GET returning JSON object containing data about top ten movies
 app.get('/movies', (req, res) => {
@@ -30,10 +32,17 @@ app.get('/movies', (req, res) => {
     })
 });
 
+//Default textual response
 app.get('/', (req, res) => {
   res.send('Welcome to My Fave Flix API!');
 });
 
 app.get('/documentation', (req, res) => {
   res.sendFile('public/documentation.html', { root: __dirname});
+});
+
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke! Sorry.....')
 });

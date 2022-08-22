@@ -1,11 +1,12 @@
-const express = require('express');
-  morgan = require('morgan');
+const express = require('express'),
+  morgan = require('morgan'),
+  bodyParser = require('body-parser'),
   fs = require('fs'),
   path = require('path');
 
 const app = express();
 
-const bodyParser = require('body-parser'),
+
   //methodOverride = require('method-override');
 
 

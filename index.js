@@ -42,7 +42,7 @@ app.get('/documentation', (req, res) => {
   res.sendFile('public/documentation.html', { root: __dirname});
 });
 
-
+//Error handling code
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke! Sorry.....')

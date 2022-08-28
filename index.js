@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 //GET returning JSON object containing data about top ten movies
-app.get('/movies', (req, res) => {
+app.get('/movies/:id', (req, res) => {
   const id = Mumber(req.params.id);
   const movie = movies.find( movie => movie.id === id);
   if (movie) {

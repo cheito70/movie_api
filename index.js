@@ -12,7 +12,7 @@ const app = express();
 
 //Create a write stream in append mode. Also a 'log.txt' file is created in root.
 
-//const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a'})
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a'})
 
 app.use(morgan('combined', {stream: accessLogStream})); //sets up logger midware function to terminal
 

@@ -33,6 +33,37 @@ app.get('/movies', (req, res) => {
     })
 });
 
+//Movies array below for the /movies endpoint.
+
+let Movies = [
+  {
+    title : 'Shawshank Redemption',
+    genre : 'Drama'
+  },
+  {
+    title : "Close Encounters of the Third Kind",
+    genre : "Sci-Fi"
+  },
+  {
+    title : "Contact",
+    genre : "Sci-Fi"
+  },
+  {
+    title : "Titanic",
+    genre : "Drama"
+  },
+  {
+    title : "A River Runs Through It",
+    genre : "Drama"
+  },
+  {
+    title : "When Harry Met Sally",
+    genre : "Romantic Comedy"
+  },
+]
+
+
+
 //Default textual response
 app.get('/', (req, res) => {
   res.send('Welcome to My Fave Flix API!');

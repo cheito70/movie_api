@@ -1,2 +1,4 @@
 127.0.0.1 - - [28/Aug/2022:15:09:12 +0000] "GET / HTTP/1.1" 200 28 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36"
 127.0.0.1 - - [28/Aug/2022:15:09:12 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36"
+127.0.0.1 - - [28/Aug/2022:15:28:39 +0000] "GET /documentation/ HTTP/1.1" 200 513 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36"
+127.0.0.1 - - [28/Aug/2022:15:28:48 +0000] "GET /movies HTTP/1.1" 500 27 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36"

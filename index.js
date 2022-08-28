@@ -41,24 +41,24 @@ let Movies = [
     genre : 'Drama'
   },
   {
-    title : "Close Encounters of the Third Kind",
-    genre : "Sci-Fi"
+    title : 'Close Encounters of the Third Kind',
+    genre : 'Sci-Fi'
   },
   {
-    title : "Contact",
-    genre : "Sci-Fi"
+    title : 'Contact',
+    genre : 'Sci-Fi'
   },
   {
-    title : "Titanic",
-    genre : "Drama"
+    title : 'Titanic',
+    genre : 'Drama'
   },
   {
-    title : "A River Runs Through It",
-    genre : "Drama"
+    title : 'A River Runs Through It',
+    genre : 'Drama'
   },
   {
-    title : "When Harry Met Sally",
-    genre : "Romantic Comedy"
+    title : 'When Harry Met Sally',
+    genre : 'Romantic Comedy'
   },
 ]
 

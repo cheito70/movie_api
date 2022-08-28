@@ -23,13 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 //GET returning JSON object containing data about top ten movies
 app.get('/movies/:id', (req, res) => {
-  const id = Mumber(req.params.id);
-  const movie = movies.find( movie => movie.id === id);
-  if (movie) {
-    res.send(movie);
-  } else {
-    res.status(404).send('Movie Not Found.');
-  }
+  res.send(movies);
 });
 
 
@@ -37,17 +31,14 @@ app.get('/movies/:id', (req, res) => {
 
 let movies = [
   {
-    id : '1',
     title : 'Shawshank Redemption',
     genre : 'Drama'
   },
   {
-    id : '2',
     title : 'Close Encounters of the Third Kind',
     genre : 'Sci-Fi'
   },
   {
-    id : '3',
     title : 'Contact',
     genre : 'Sci-Fi'
   },
@@ -56,12 +47,10 @@ let movies = [
     genre : 'Drama'
   },
   {
-    id : '4',
     title : 'A River Runs Through It',
     genre : 'Drama'
   },
   {
-    id : '5',
     title : 'When Harry Met Sally',
     genre : 'Romantic Comedy'
   }

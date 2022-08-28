@@ -35,7 +35,7 @@ app.get('/movies', (req, res) => {
 
 //Movies array below for the /movies endpoint.
 
-let Movies = [
+const Movies = [
   {
     title : 'Shawshank Redemption',
     genre : 'Drama'

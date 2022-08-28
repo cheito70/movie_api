@@ -5,4 +5,4 @@ let Movies = [
     genre: 'Drama'
   }
 
-]
+];

@@ -59,8 +59,8 @@ let Movies = [
   {
     title : 'When Harry Met Sally',
     genre : 'Romantic Comedy'
-  },
-]
+  }
+];
 
 
 

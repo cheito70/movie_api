@@ -23,28 +23,25 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 //GET returning JSON object containing data about top ten movies
 app.get('/movies', (req, res) => {
-  Movies.find()
-    .then((movies) => {
-      res.status(201).json(movies);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    })
+  res.send(movies);
 });
+
 
 //Movies array below for the /movies endpoint.
 
-const Movies = [
+let movies = [
   {
+    id : '1',
     title : 'Shawshank Redemption',
     genre : 'Drama'
   },
   {
+    id : '2',
     title : 'Close Encounters of the Third Kind',
     genre : 'Sci-Fi'
   },
   {
+    id : '3',
     title : 'Contact',
     genre : 'Sci-Fi'
   },
@@ -53,10 +50,12 @@ const Movies = [
     genre : 'Drama'
   },
   {
+    id : '4',
     title : 'A River Runs Through It',
     genre : 'Drama'
   },
   {
+    id : '5',
     title : 'When Harry Met Sally',
     genre : 'Romantic Comedy'
   }

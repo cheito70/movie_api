@@ -23,7 +23,13 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 //GET returning JSON object containing data about top ten movies
 app.get('/movies', (req, res) => {
-  res.send(movies);
+  const id = Mumber(req.params.id);
+  const movie = movies.find( movie => movie.id === id);
+  if (movie) {
+    res.send(movie);
+  } else {
+    res.status(404).send('Movie Not Found.');
+  }
 });
 
 

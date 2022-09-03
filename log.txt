@@ -24,3 +24,6 @@
 127.0.0.1 - - [28/Aug/2022:22:25:28 +0000] "GET /documentation HTTP/1.1" 200 513 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36"
 127.0.0.1 - - [28/Aug/2022:22:25:47 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36"
 127.0.0.1 - - [28/Aug/2022:22:25:59 +0000] "GET /movies HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36"
+192.168.1.69 - - [29/Aug/2022:15:41:28 +0000] "GET / HTTP/1.1" 200 28 "-" "Avast Antivirus"
+192.168.1.69 - - [29/Aug/2022:15:42:56 +0000] "GET /HNAP1/ HTTP/1.1" 404 145 "-" "Avast Antivirus"
+192.168.1.69 - - [29/Aug/2022:15:44:03 +0000] "GET /requested.html HTTP/1.1" 404 153 "-" "-"

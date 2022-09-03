@@ -5,6 +5,8 @@ const express = require('express'),
   path = require('path');
 
 const app = express();
+const uuid = require('uuid');
+
 
 
   //methodOverride = require('method-override');
@@ -16,7 +18,7 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { 
 
 app.use(morgan('combined', {stream: accessLogStream})); //sets up logger midware function to terminal
 
-app.use(express.static('public')); //Automatically routes all requests for static files  to corresponding folder on server
+app.use("/documentation.html", express.static('public')); //Automatically routes all requests for static files  to corresponding folder on server
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));

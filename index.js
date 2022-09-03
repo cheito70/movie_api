@@ -26,6 +26,29 @@ app.get('/movies', (req, res) => {
   res.send(movies);
 });
 
+//User objects here
+let users = [
+  {
+    id: 1,
+    name: 'Constance',
+    favoriteMovies: ['When Harry Met Sally']
+  },
+  {
+    id: 2,
+    name: 'Brian',
+    favoriteMovies: []
+  },
+  {
+    id: 3,
+    name: 'Jennifer',
+    favoriteMovies: []
+  },
+  {
+    id: 4,
+    name: 'Arjuna',
+    favoriteMovies: ['Contact']  
+  }
+];
 
 //Movies array below for the /movies endpoint.
 

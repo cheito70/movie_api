@@ -6,10 +6,7 @@ const express = require('express'),
 
 const app = express();
 const uuid = require('uuid');
-
-
-
-  //methodOverride = require('method-override');
+const methodOverride = require('method-override');
 
 
 //Create a write stream in append mode. Also a 'log.txt' file is created in root.
@@ -21,6 +18,7 @@ app.use(morgan('combined', {stream: accessLogStream})); //sets up logger midware
 app.use("/documentation.html", express.static('public')); //Automatically routes all requests for static files  to corresponding folder on server
 
 app.use(bodyParser.json());
+app.use(methodOverride());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 //GET returning JSON object containing data about top ten movies

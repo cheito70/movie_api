@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 //GET returning JSON object containing data about top ten movies
 app.get('/movies', (req, res) => {
-  res.send(movies);
+  res.json(movies);
 });
 
 //User objects here

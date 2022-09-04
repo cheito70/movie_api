@@ -29,7 +29,7 @@ app.get("/movies", (req, res) => {
 //Get request for movies by title
 app.get ("/movies/:title", (req, res) => {
   const { title } = req.params;
-  const movie = movies.find((movie) => movie.Title === title);
+  const movie = movies.find( movie => movie.Title === title);
   if (movie) {
     res.status(200).json(movie);
   } else {

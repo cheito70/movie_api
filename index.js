@@ -89,6 +89,37 @@ app.put("/users/:id", (req, res) => {
   }
 });
 
+//Post method for specific users and their movie titles
+app.post("/users/:id/:movieTitle", (req, res) => {
+  const { id, movieTitle} = req.params;
+  const updateUser = req.body;
+
+  let user = users.find((user) => user.id == id);
+
+  if (user) {
+    user.favoriteMovies.push(movieTitle);
+    res.status(200).send(`${movieTitle} has been added to user ${id} array!`);
+  } else {
+    res.status(400).send("user does not exist!");
+  }
+});
+
+//Delte method for user
+app.delete("/users/:id/:movieTitle", (req, res) => {
+  const { id, movieTitle } = req.params;
+
+  let user = users.find((user) => user.id == id);
+
+  if (user) {
+    user.favoriteMovies = user.favoriteMovies.filter(
+      (title) => title !== movieTitle
+    );
+    res.status(200).send(`${movieTitle} has been removed from user ${id} list!`);
+  } else {
+    res.status(400).send("user does not exist!");
+  }
+});
+
 
 
 //User objects here

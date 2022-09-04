@@ -69,7 +69,7 @@ app.post("/users", (req, res) => {
     newUser.id = uuid.v4();
     res.status(201).json(newUser);
   } else {
-    res.status(400).send("users needs names!");
+    res.status(400).send("names are required for users!");
 
   }
 });

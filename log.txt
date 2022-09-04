@@ -45,3 +45,8 @@
 127.0.0.1 - - [04/Sep/2022:03:41:07 +0000] "GET /movies HTTP/1.1" 200 2350 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [04/Sep/2022:03:46:25 +0000] "GET /movies/director/Steven%20Spielberg HTTP/1.1" 200 27 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [04/Sep/2022:03:52:01 +0000] "POST /users/3/Shawshank%20Redemption HTTP/1.1" 200 52 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:03:56:47 +0000] "POST /users HTTP/1.1" 400 29 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:03:58:33 +0000] "POST /users HTTP/1.1" 400 29 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:04:04:00 +0000] "POST /users HTTP/1.1" 400 29 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:04:05:32 +0000] "POST /users HTTP/1.1" 400 29 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:04:07:55 +0000] "POST /users HTTP/1.1" 400 29 "-" "PostmanRuntime/7.29.2"

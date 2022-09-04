@@ -65,6 +65,7 @@ app.get("/movies/director/:directorName", (req, res) => {
 //Post method for users creating the "/users" endpoint
 app.post("/users", (req, res) => {
   const newUser = req.body;
+
   if (newUser.name) {
     newUser.id = uuid.v4();
     users.push(newUser);
@@ -78,12 +79,12 @@ app.post("/users", (req, res) => {
 //User put or update method
 app.put("/users/:id", (req, res) => {
   const { id } = req.params;
-  const updateUser = req.body;
+  const updatedUser = req.body;
 
-  let user = users.find((user) => user.id == id);
+  let user = users.find(user => user.id == id);
 
   if (user) {
-    user.name = updateUser.name;
+    user.name = updatedUser.name;
     res.status(200).json(user);
   } else {
     res.status(400).send("user does not exist!");

@@ -61,3 +61,8 @@
 127.0.0.1 - - [04/Sep/2022:05:08:37 +0000] "DELETE /users/1/When%20Harry%20Met%20Sally HTTP/1.1" 200 55 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [04/Sep/2022:05:10:38 +0000] "POST /users/2/When%20Harry%20Met%20Sally HTTP/1.1" 200 52 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [04/Sep/2022:05:11:36 +0000] "DELETE /users/2/When%20Harry%20Met%20Sally HTTP/1.1" 200 55 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:05:18:35 +0000] "DELETE /users/13 HTTP/1.1" 400 20 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:05:18:44 +0000] "DELETE /users/27 HTTP/1.1" 400 20 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:05:18:53 +0000] "DELETE /users/2 HTTP/1.1" 200 24 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:05:23:21 +0000] "DELETE /users/2 HTTP/1.1" 400 20 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:05:23:32 +0000] "DELETE /users/3 HTTP/1.1" 200 24 "-" "PostmanRuntime/7.29.2"

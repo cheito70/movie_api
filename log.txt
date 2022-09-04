@@ -71,3 +71,7 @@
 127.0.0.1 - - [04/Sep/2022:05:28:36 +0000] "POST /users/ HTTP/1.1" 201 82 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [04/Sep/2022:05:30:19 +0000] "POST /users/34d66d7e-dc84-411b-aeab-31d5c3cd423a/Thor HTTP/1.1" 200 71 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [04/Sep/2022:05:30:53 +0000] "GET /users/34d66d7e-dc84-411b-aeab-31d5c3cd423a HTTP/1.1" 404 181 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:05:31:46 +0000] "DELETE /users/34d66d7e-dc84-411b-aeab-31d5c3cd423a HTTP/1.1" 200 216 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:05:33:00 +0000] "DELETE /users/34d66d7e-dc84-411b-aeab-31d5c3cd423a HTTP/1.1" 400 20 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:05:33:27 +0000] "POST /users HTTP/1.1" 201 82 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:05:33:51 +0000] "DELETE /users/d496e588-078a-43f6-ae7e-61cacae2880a HTTP/1.1" 200 216 "-" "PostmanRuntime/7.29.2"

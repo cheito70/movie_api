@@ -55,3 +55,6 @@
 127.0.0.1 - - [04/Sep/2022:04:31:19 +0000] "GET /movies/director/Steven%20Spielberg HTTP/1.1" 200 27 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [04/Sep/2022:04:39:19 +0000] "POST /users HTTP/1.1" 500 27 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [04/Sep/2022:04:44:51 +0000] "POST /users HTTP/1.1" 201 81 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:04:52:28 +0000] "PUT /users/1 HTTP/1.1" 200 79 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:04:58:43 +0000] "POST /users/2/Shawshank%20Redemption HTTP/1.1" 200 52 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [04/Sep/2022:05:06:23 +0000] "DELETE /users/2/Shawshank%20Redemption HTTP/1.1" 200 55 "-" "PostmanRuntime/7.29.2"

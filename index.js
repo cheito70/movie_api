@@ -91,7 +91,7 @@ app.put("/users/:id", (req, res) => {
   }
 });
 
-//Post method for specific users and their movie titles
+//Post method for specific users to post favorite movies
 app.post("/users/:id/:movieTitle", (req, res) => {
   const { id, movieTitle} = req.params;
   const updateUser = req.body;
@@ -114,7 +114,7 @@ app.delete("/users/:id/:movieTitle", (req, res) => {
 
   if (user) {
     user.favoriteMovies = user.favoriteMovies.filter(
-      (title) => title !== movieTitle
+      title => title !== movieTitle
     );
     res.status(200).send(`${movieTitle} has been removed from user ${id} list!`);
   } else {

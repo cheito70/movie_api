@@ -104,7 +104,7 @@ app.post("/users/:id/:movieTitle", (req, res) => {
   }
 });
 
-//Delte method for user
+//Delte method for deleting favorite movies
 app.delete("/users/:id/:movieTitle", (req, res) => {
   const { id, movieTitle } = req.params;
 

@@ -77,3 +77,5 @@
 127.0.0.1 - - [04/Sep/2022:05:33:51 +0000] "DELETE /users/d496e588-078a-43f6-ae7e-61cacae2880a HTTP/1.1" 200 216 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [06/Sep/2022:06:35:58 +0000] "GET /documentation HTTP/1.1" 200 12419 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
 127.0.0.1 - - [06/Sep/2022:06:35:58 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/documentation" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+127.0.0.1 - - [06/Sep/2022:06:38:14 +0000] "GET /documentation HTTP/1.1" 200 12459 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+127.0.0.1 - - [06/Sep/2022:06:38:17 +0000] "GET /documentation HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"

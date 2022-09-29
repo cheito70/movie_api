@@ -148,20 +148,23 @@ app.put("/users/:Username", (req, res) => {
   });
 });
 
-//Post method for specific users to post favorite movies
-app.post("/users/:id/:movieTitle", (req, res) => {
-  const { id, movieTitle} = req.params;
-  const updateUser = req.body;
-
-  let user = users.find((user) => user.id == id);
-
-  if (user) {
-    user.favoriteMovies.push(movieTitle);
-    res.status(200).send(`${movieTitle} has been added to user ${id} array!`);
-  } else {
-    res.status(400).send("user does not exist!");
-  }
+//Post method for adding new movie to a user's favoriteMovie list
+app.post("/users/:Username/movies/:MovieID", (req, res) => {
+  Users.findOneAndUpdate({ Username: req.params.Username }, {
+      $push: { FavoriteMovies: req.params.MovieID }
+  },
+  { new: true }, //This line ensures updated doc is returned
+  (err, updatedUser) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    } else {
+      res.json(updatedUser);
+    }
+  });
 });
+
+
 
 //Delte method for deleting favorite movies
 app.delete("/users/:id/:movieTitle", (req, res) => {

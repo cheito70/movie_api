@@ -49,16 +49,16 @@ app.get ("/movies/:title", (req, res) => {
   }
 });
 
-//Get or READ request for movies by genre
-app.get("/movies/genre/:genreName", (req, res) => {
-  const { genreName } = req.params;
-  const genre = movies.find(movie => movie.Genre.Name === genreName).Genre;
-
-  if (genre) {
-    res.status(200).json(genre);
-  } else {
-    res.status(400).send("no such genre!");
-  }
+//Returns a JSON object of all movies of a certain genre
+app.get("/movies/genres/:Genre", (req, res) => {
+  Movies.find({ "Genre.Name": req.params.Genre})
+  .then((movies) => {
+    res.send(movies);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(400).send("Error: " + err);
+  })
 });
 
 //Get request for director names

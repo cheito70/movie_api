@@ -38,15 +38,16 @@ app.get("/movies", (req, res) => {
   res.json(movies);
 });
 
-//READ request for movies by title
-app.get ("/movies/:title", (req, res) => {
-  const { title } = req.params;
-  const movie = movies.find( movie => movie.Title === title);
-  if (movie) {
-    res.status(200).json(movie);
-  } else {
-    res.status(400).send("no such movie!");
-  }
+//Returns JSON object of a movie by title
+app.get ("/movies/:Title", (req, res) => {
+  Movies.findOne({ Title: req.params.Title})
+  .then((movie) => {
+    res.json(movie);
+  })
+  .catch ((err) => {
+    console.error(err);
+    res.status(500).send("Error: " + err)
+  })
 });
 
 //Returns a JSON object of all movies of a certain genre

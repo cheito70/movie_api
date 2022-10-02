@@ -62,17 +62,16 @@ app.get("/movies/genres/:Genre", (req, res) => {
   })
 });
 
-//Get request for director names
-app.get("/movies/director/:directorName", (req, res) => {
-  const { directorName } = req.params;
-  const director = movies.find(
-    (movie) => movie.Director.Name === directorName).Director;
-
-    if (director) {
-      res.status(200).json(director);
-    } else {
-      res.status(400).send("no such director!");
-    }
+//Get JSON object of movie director by name
+app.get("/movies/directors/:Name", (req, res) => {
+  Movies.findOne({ "Director.Name": req.params.Name })
+    .then((movie) => {
+      res.json(movie.Director);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+    })
 });
 
 //Post method for users creating the "/users" endpoint and creating new users

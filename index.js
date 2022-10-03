@@ -150,18 +150,17 @@ app.put("/users/:Username", (req, res) => {
 });
 
 //Post method for adding new movie to a user's favoriteMovie list
-app.post("/users/:Username/movies/:MovieID", (req, res) => {
+app.put("/users/:Username/movies/:MovieID", (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
       $addToSet: { FavoriteMovies: req.params.MovieID } //$addToSet works better than push; won't add duplicates
   },
-  { new: true }, //This line ensures updated doc is returned
-  (err, updatedUser) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send("Error: " + err);
-    } else {
-      res.json(updatedUser);
-    }
+  { new: true }) // theupdated new doc is returned
+  .then ((updatedUser) => {
+    res.json(updatedUser);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(500).send("Error: " + err);
   });
 });
 

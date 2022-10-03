@@ -1,13 +1,13 @@
 {
   "name": "movie_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "A working api to access your favorite movies.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
     "dev": "nodemon index.js"
-    
+
   },
   "repository": {
     "type": "git",

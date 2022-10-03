@@ -152,7 +152,7 @@ app.put("/users/:Username", (req, res) => {
 //Post method for adding new movie to a user's favoriteMovie list
 app.post("/users/:Username/movies/:MovieID", (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
-      $push: { FavoriteMovies: req.params.MovieID }
+      $addToSet: { FavoriteMovies: req.params.MovieID } //$addToSet works better than push; won't add duplicates
   },
   { new: true }, //This line ensures updated doc is returned
   (err, updatedUser) => {

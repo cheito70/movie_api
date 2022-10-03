@@ -33,6 +33,13 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(bodyParser.urlencoded({ extended: true}));
 
+//Authentication
+let auth = require("./auth")(app);
+
+//Passport
+const passport = require("passport");
+require("./passport");
+
 //Default textual response
 app.get("/", (req, res) => {
   res.send("Welcome to My Fave Flix API!");

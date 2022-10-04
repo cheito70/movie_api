@@ -85,6 +85,18 @@ app.get("/movies/genres/:Genre", passport.authenticate("jwt", { session: false }
   })
 });
 
+//Returns description of Genre.
+app.get("/movies/genres/:Genre", passport.authenticate("jwt", { session: false }), (req, res) => {
+  Movies.findOne({ "Genre.Name": req.params.Genre})
+  .then((movie) => {
+    res.send(movie.Genre.Description);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(400).send("Error: " + err);
+  })
+});
+
 //Get JSON object of movie director by name
 app.get("/movies/directors/:Name", (req, res) => {
   Movies.findOne({ "Director.Name": req.params.Name })

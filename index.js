@@ -50,8 +50,15 @@ app.get("/documentation", (req, res) => {
 });
 
 //GET returning JSON object containing data about top ten movies
-app.get("/movies", (req, res) => {
-  res.json(movies);
+app.get("/movies", passport.authenticate("jwt", { session: false }), (req, res) => {
+  Movies.find()
+  .then((movies) => {
+    res.json(movies);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(400).send("Error: " + err);
+  })
 });
 
 //Returns JSON object of a movie by title

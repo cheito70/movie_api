@@ -74,7 +74,7 @@ app.get ("/movies/:Title", passport.authenticate("jwt", { session: false }), (re
 });
 
 //Returns a JSON object of all movies of a certain genre
-app.get("/movies/genres/:Genre", (req, res) => {
+app.get("/movies/genres/:Genre", passport.authenticate("jwt", { session: false }), (req, res) => {
   Movies.find({ "Genre.Name": req.params.Genre})
   .then((movies) => {
     res.send(movies);

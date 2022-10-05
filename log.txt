@@ -92,3 +92,5 @@
 ::1 - - [05/Oct/2022:03:20:54 +0000] "GET /genres/Sci-Fi HTTP/1.1" 404 152 "-" "PostmanRuntime/7.29.2"
 ::1 - - [05/Oct/2022:03:22:27 +0000] "GET /genres/Sci-Fi HTTP/1.1" 200 266 "-" "PostmanRuntime/7.29.2"
 ::1 - - [05/Oct/2022:03:28:09 +0000] "POST /users HTTP/1.1" 500 27 "-" "PostmanRuntime/7.29.2"
+::1 - - [05/Oct/2022:03:31:54 +0000] "POST /users HTTP/1.1" 500 27 "-" "PostmanRuntime/7.29.2"
+::1 - - [05/Oct/2022:03:32:14 +0000] "POST /users HTTP/1.1" 500 52 "-" "PostmanRuntime/7.29.2"

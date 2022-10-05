@@ -86,7 +86,7 @@ app.get("/movies/genres/:Genre", (req, res) => {
 });
 
 //Returns one description of Genre.
-app.get("/movies/genres/:Genre", (req, res) => {
+app.get("/genres/:Genre", (req, res) => {
   Movies.findOne({ "Genre.Name": req.params.Genre})
   .then((movie) => {
     res.send(movie.Genre.Description);

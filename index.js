@@ -242,8 +242,10 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something broke! Sorry.....");
 });
 
-const port = process.env.PORT || 8080;
-app.listen('0.0.0.0', () => console.log("App listening on port" + port));
+
+app.listen(8080, () => {
+  console.log("The app is listening on port 8080!");
+});
 
 
 //passport.authenticate("jwt", { session: false }),

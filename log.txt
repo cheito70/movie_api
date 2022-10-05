@@ -90,3 +90,5 @@
 ::1 - - [05/Oct/2022:03:14:23 +0000] "GET /movies/directors/Rob%20Reiner HTTP/1.1" 200 710 "-" "PostmanRuntime/7.29.2"
 ::1 - - [05/Oct/2022:03:18:20 +0000] "GET /movies/genres/Sci-Fi HTTP/1.1" 200 2426 "-" "PostmanRuntime/7.29.2"
 ::1 - - [05/Oct/2022:03:20:54 +0000] "GET /genres/Sci-Fi HTTP/1.1" 404 152 "-" "PostmanRuntime/7.29.2"
+::1 - - [05/Oct/2022:03:22:27 +0000] "GET /genres/Sci-Fi HTTP/1.1" 200 266 "-" "PostmanRuntime/7.29.2"
+::1 - - [05/Oct/2022:03:28:09 +0000] "POST /users HTTP/1.1" 500 27 "-" "PostmanRuntime/7.29.2"

@@ -34,11 +34,11 @@ app.use(methodOverride());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 //Authentication
-let auth = require("./auth")(app);
+//let auth = require("./auth")(app);
 
 //Passport
-const passport = require("passport");
-require("./passport");
+//const passport = require("passport");
+//require("./passport");
 
 //Default textual response
 app.get("/", (req, res) => {
@@ -50,7 +50,7 @@ app.get("/documentation", (req, res) => {
 });
 
 //returns JSON object containing all movies
-app.get("/movies", passport.authenticate("jwt", { session: false }), (req, res) => {
+app.get("/movies", (req, res) => {
   Movies.find()
   .then((movies) => {
     res.json(movies);
@@ -62,7 +62,7 @@ app.get("/movies", passport.authenticate("jwt", { session: false }), (req, res) 
 });
 
 //Returns JSON object of a movie by title
-app.get ("/movies/:Title", passport.authenticate("jwt", { session: false }), (req, res) => {
+app.get ("/movies/:Title", (req, res) => {
   Movies.findOne({ Title: req.params.Title})
   .then((movie) => {
     res.json(movie);
@@ -74,7 +74,7 @@ app.get ("/movies/:Title", passport.authenticate("jwt", { session: false }), (re
 });
 
 //Returns a JSON object of all movies of a certain genre
-app.get("/movies/genres/:Genre", passport.authenticate("jwt", { session: false }), (req, res) => {
+app.get("/movies/genres/:Genre", (req, res) => {
   Movies.find({ "Genre.Name": req.params.Genre})
   .then((movies) => {
     res.send(movies);
@@ -86,7 +86,7 @@ app.get("/movies/genres/:Genre", passport.authenticate("jwt", { session: false }
 });
 
 //Returns one description of Genre.
-app.get("/movies/genres/:Genre", passport.authenticate("jwt", { session: false }), (req, res) => {
+app.get("/movies/genres/:Genre", (req, res) => {
   Movies.findOne({ "Genre.Name": req.params.Genre})
   .then((movie) => {
     res.send(movie.Genre.Description);
@@ -244,3 +244,6 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 8080;
 app.listen('0.0.0.0', () => console.log("App listening on port" + port));
+
+
+//passport.authenticate("jwt", { session: false }),

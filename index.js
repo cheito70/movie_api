@@ -49,7 +49,7 @@ app.get("/documentation", (req, res) => {
   res.sendFile("public/documentation.html", { root: __dirname});
 });
 
-//GET returning JSON object containing data about top ten movies
+//returns JSON object containing all movies
 app.get("/movies", passport.authenticate("jwt", { session: false }), (req, res) => {
   Movies.find()
   .then((movies) => {
@@ -85,7 +85,7 @@ app.get("/movies/genres/:Genre", passport.authenticate("jwt", { session: false }
   })
 });
 
-//Returns description of Genre.
+//Returns one description of Genre.
 app.get("/movies/genres/:Genre", passport.authenticate("jwt", { session: false }), (req, res) => {
   Movies.findOne({ "Genre.Name": req.params.Genre})
   .then((movie) => {
@@ -201,7 +201,7 @@ app.put("/users/:Username/movies/:MovieID", (req, res) => {
 
 
 
-//Delete method for deleting favorite movies from user
+//Delete favorite movies from user
 app.delete("/users/:Username/movies/:MovieID", (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username}, {
     $pull: { FavoriteMovies: req.params.MovieID }

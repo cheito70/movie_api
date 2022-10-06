@@ -33,6 +33,10 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(bodyParser.urlencoded({ extended: true}));
 
+//Passport
+//const passport = require("passport");
+//require("./passport");
+
 //Authentication
 //let auth = require("./auth")(app);
 

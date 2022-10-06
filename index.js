@@ -236,6 +236,22 @@ app.delete("/users/:Username", (req, res) => {
   });
 });
 
+//Delete user by ID
+app.delete("/users/:_id", (req, res) => {
+  Users.findOneAndRemove({ _id: req.params._id})
+  .then((user) => {
+    if (!user) {
+      res.status(400).send(req.params._id + " was not found");
+    } else {
+      res.status(200).send(req.params._id + " was deleted.");
+    }
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(500).send("Error: " + err);
+  });
+});
+
 
 //User objects and movie objects were basically transferred to MongoDB
 

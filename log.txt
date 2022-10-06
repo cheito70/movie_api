@@ -101,3 +101,6 @@
 ::1 - - [05/Oct/2022:04:00:19 +0000] "POST /users HTTP/1.1" 500 136 "-" "PostmanRuntime/7.29.2"
 ::1 - - [05/Oct/2022:04:01:55 +0000] "POST /users HTTP/1.1" 500 42 "-" "PostmanRuntime/7.29.2"
 ::1 - - [06/Oct/2022:15:28:21 +0000] "POST /users HTTP/1.1" 500 136 "-" "PostmanRuntime/7.29.2"
+::1 - - [06/Oct/2022:15:36:04 +0000] "POST /users HTTP/1.1" 201 62 "-" "PostmanRuntime/7.29.2"
+::1 - - [06/Oct/2022:15:38:05 +0000] "POST /users HTTP/1.1" 400 23 "-" "PostmanRuntime/7.29.2"
+::1 - - [06/Oct/2022:15:38:51 +0000] "GET /users HTTP/1.1" 201 996 "-" "PostmanRuntime/7.29.2"

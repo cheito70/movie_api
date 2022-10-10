@@ -15,273 +15,97 @@
     <br />
 
     <div>
-      <h2>Add a New User</h2>
-      <h3>Endpoint: /users</h3>
-      <h4>Method Type: POST</h4>
-      <p><strong>Description: </strong> This endpoint allows users to register with their own id.
-        The endpoint returns a JSON object with 3 key values: a string for "id", a string for "Name",
-        and an array for "Favorite Movies"</p>
-        <p><strong>Query Parameters: </strong>None</p>
-        <p><strong>Expected Request Data: </strong>JSON object with data about user. The "name" is required</p>
-        <p><strong>Example:</strong></p>
-        <code>
-          {<br />
-            "Name" : "Marlene"<br />
-          }
+      <table>
+    <thead>
+      <th>Endpoint Description</th>
+      <th>Method</th>
+      <th>URL</th>
+      <th>Body</th>
+      <th>Response</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Returns ALL movies as a JSON object</td>
+        <td class="get">GET</td>
+        <td>/movies</td>
+        <td>-</td>
+        <td>JSON</td>
+      </tr>
+      <tr>
+        <td>Returns a single movie as a JSON object</td>
+        <td class="get">GET</td>
+        <td>/movies/:Title</td>
+        <td>-</td>
+        <td>JSON</td>
+      </tr>
+      <tr>
+        <td>Returns all movies of a certain genreas as a JSON object</td>
+        <td class="get">GET</td>
+        <td>/movies/genre/:Genre</td>
+        <td>-</td>
+        <td>JSON</td>
+      </tr>
+      <tr>
+        <td>Returns the description of a genre</td>
+        <td class="get">GET</td>
+        <td>/genre/:Genre</td>
+        <td>-</td>
+        <td>JSON</td>
+      </tr>
+      <tr>
+        <td>Returns a movie director by name as a JSON object</td>
+        <td class="get">GET</td>
+        <td>/movies/directors/:Name</td>
+        <td>-</td>
+        <td>JSON</td>
+      </tr>
+      <tr>
+        <td>Returns all users as a JSON object</td>
+        <td class="get">GET</td>
+        <td>/users</td>
+        <td>-</td>
+        <td>JSON</td>
+      </tr>
+      <tr>
+        <td>Returns a user by Username as a JSON object</td>
+        <td class="get">GET</td>
+        <td>/users/:Username</td>
+        <td>-</td>
+        <td>JSON</td>
+      </tr>
+      <tr>
+        <td>Creates a new user as a JSON object</td>
+        <td class="post">POST</td>
+        <td>/users</td>
+        <td>JSON</td>
+        <td>201</td>
+      </tr>
+      <tr>
+        <td>Updates the information of a user</td>
+        <td class="put">PUT</td>
+        <td>/users/:Username</td>
+        <td>JSON</td>
+        <td>201</td>
+      </tr>
+      <tr>
+        <td>Adds a movie to a user's list of favorite movies</td>
+        <td class="put">PUT</td>
+        <td>/users/:Username/movies/:MovieID</td>
+        <td>-</td>
+        <td>201</td>
+      </tr>
+      <tr>
+        <td>Removes a movie from a user's list of favorite movies</td>
+        <td class="delete">DELETE</td>
+        <td>/users/:Username/movies/:MovieID</td>
+        <td>-</td>
+        <td>201</td>
+      </tr>
+      <tr>
+        <td>Removes an existing user from the database</td>
+        <td class="delete">DELETE</td>
 
-          <p><strong>Expected Response Data: </strong>JSON object with data about user. The generated ID is included</p>
-
-          <p><strong>Example:</strong>
-            <code>
-              {<br />
-                "id": 1, <br />
-                "name": "Marlene",<br />
-                "favoriteMovies": []<br />
-              }
-
-              <p><strong>Response Status Codes</strong></p>
-              <p>201: Created</p>
-              <p>400: Bad request- names are required for users!</p>
-            </div>
-            <br />
-
-            <div>
-              <h2>Updating Users</h2>
-              <h3>/users/:id</h3>
-              <h4>Method Type: POST</h4>
-              <p>
-                <strong>Description:</strong> This endpoint allows users to update their
-                username. Endpoint returns a JSON object with few key values. For key
-                "name" it returns a string, for "favorite movies" an array, and for an "id", an
-                integer.
-              </p>
-              <p><strong>Query Parameters:</strong> :id</p>
-              <p>
-                <strong>Expected request data:</strong> JSON object with data about
-                user.
-              </p>
-              <p><strong>Required</strong>: :id</p>
-              <h4>Example:</h4>
-              <p>localhost:8080/users/1</p>
-              <br />
-              <code>
-                {<br />
-                  "Username": "newUsername"<br />
-                }
-              </code>
-              <p>
-                <strong>Expected response data:</strong> JSON object with data about
-                user which includes,"id" with integer value, "Name", and "favorite
-                movies" with an array.
-              </p>
-              <h4>Example:</h4>
-              <code>
-                { "id": 1, <br />
-                "name": "Brielle Updated Name", <br />
-                "favoriteMovies": [] }
-              </code>
-              <p><strong>Response status codes:</strong></p>
-              <p>200: OK-</p>
-              <p>400: Bad request- No such user!</p>
-            </div>
-            <br />
-            <div>
-
-              <div>
-                <h2>Deleting Users</h2>
-                <h3>/users/:id</h3>
-                <h4>Method Type: DELETE</h4>
-                <p>
-                  <strong>Description:</strong> This endpoint allows users remove their
-                  account by their Username.Endpoint returns a confirmation message that
-                  users account has been deleted.
-                </p>
-                <p><strong>Query Parameters:</strong> :id,</p>
-                <p><strong>Expected request data:</strong> Required: :id</p>
-                <h4>Example:</h4>
-                <p>localhost:8080/users/1</p>
-                <p>
-                  <strong>Expected response data:</strong> A confirmation message that
-                  users account has been deleted.
-                </p>
-                <h4>Example:</h4>
-                <code> { "user 1 has been deleted" } </code>
-                <p><strong>Response status codes:</strong></p>
-                <div>
-                  <p>200: OK- User id has been deleted!</p>
-                  <p>400: Bad request- No such user!</p>
-                </div>
-              </div>
-              <br />
-
-              <h2>Get All Movies</h2>
-              <h3>/movies</h3>
-              <h4>Method Type: GET</h4>
-              <p>
-                <strong>Description:</strong> This endpoint allows users to get whole
-                list of movies. Endpoint returns an array with list of objects. Each
-                object contains data about movies.
-              </p>
-              <p><strong>Query Parameters:</strong> None</p>
-              <p><strong>Expected request data:</strong> Required: /movies</p>
-              <h4>Example:</h4>
-              <p>localhost:8080/movies</p>
-              <p>
-                <strong>Expected response data:</strong> An array with list of movies.
-                Each object contains data about movies. Every key is described with a
-                value of a string.
-              </p>
-              <h4>Example:</h4>
-              <code>
-                {<br />
-                  Title: "Titanic", <br />
-                  Description: "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic." <br />
-                  Genre: { Name: "Drama" }, <br />
-                  Director: { Name: "James Cameron"},<br />
-                  ImageURL:
-                  "https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png"<br />
-                }
-              </code>
-            </div>
-            <br />
-
-            <div>
-              <h2>Search Movies by Title</h2>
-              <h3>/movies/:movieTitle</h3>
-              <h4>Method Type: GET</h4>
-              <p>
-                <strong>Description:</strong> This endpoint allows users to search a
-                movie by title. Endpoint returns an object with data about specific
-                movie.
-              </p>
-              <p><strong>Query Parameters:</strong> :movieTitle</p>
-              <p><strong>Expected request data:</strong> Required: :movieTitle</p>
-              <h4>Example:</h4>
-              <p>localhost:8080/movies/Titanic</p>
-              <p>
-                <strong>Expected response data:</strong> An object containing data about
-                specific movie. Every key is described with a value in form of a string.
-              </p>
-              <h4>Example:</h4>
-              <code>
-                { <br />
-                  Title: "The Shawshank Redemption", <br />
-                  Description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",<br />
-                  Genre: { Name: "Drama" }, <br />
-                  Director: { Name: "Frank Darabont" }, <br />
-                  ImageURL:
-                  "https://www.imdb.com/title/tt0332280/mediaviewer/rm1153669376/?ref_=tt_ov_i"
-                }
-              </code>
-              <p><strong>Response status codes:</strong></p>
-              <p>200: OK- JSON object</p>
-              <p>400: Bad Request- No such movie!</p>
-            </div>
-            <br />
-
-            <div>
-              <h2>Search Movie Genre</h2>
-              <h3>/movies/genre/:genreName</h3>
-              <h4>Method Type: GET</h4>
-              <p>
-                <strong>Description:</strong> This endpoint allows users to search for a
-                genre. Endpoint returns an object with data about specific genre.
-              </p>
-              <p><strong>Query Parameters:</strong> :genreName</p>
-              <p><strong>Expected request data:</strong> Required: :genreName</p>
-              <h4>Example:</h4>
-              <p>localhost:8080/movies/genre/Drama</p>
-              <p>
-                <strong>Expected response data:</strong> An object containing data about
-                specific genre. Every key is described with value of a string.
-              </p>
-              <h4>Example:</h4>
-              <code>
-                { <br />
-                  "Name":"Comedy" <br />
-                },
-              </code>
-              <p><strong>Response status codes:</strong></p>
-              <p>200: OK- JSON object</p>
-              <p>400: Bad Request- No such genre!</p>
-            </div>
-            <br />
-            <div>
-              <h2>Add Favorite Movies</h2>
-              <h3>/users/:id/movieTitle</h3>
-              <h4>Method Type: POST</h4>
-              <p>
-                <strong>Description:</strong>This endpoint allows users to add a movie to
-                their favorites list.Endpoint returns a JSON object with users' data
-                including an updated favorite movies array.
-              </p>
-              <p><strong>Query Parameters:</strong> :id, :movieTitle</p>
-              <p><strong>Expected request data:</strong> Required: :id, :movieTitle</p>
-              <h4>Example:</h4>
-              <p>localhost:8080/users/1/Shawshank%20Redemption</p>
-              <p>
-                <strong>Expected response data:</strong> JSON object with updated list
-                of movies in Favorite Movies array.
-              </p>
-              <code> { Shawshank Redemption has been added to user 1 array! } </code>
-              <p><strong>Response status codes:</strong></p>
-              <p>200: OK- Movie has been added to user array!</p>
-              <p>400: Bad Request- No such user!</p>
-            </div>
-            <br />
-
-            <div>
-              <h2>Delete Movie from Favorites</h2>
-              <h3>/users/:id/:movieTitle</h3>
-              <h4>Method Type: DELETE</h4>
-              <p>
-                <strong>Description:</strong> This endpoint allows users to remove movie
-                from their list of favorites. Endpoint returns an JSON object with users data
-                including updated favorite movies array.
-              </p>
-              <p><strong>Query Parameters:</strong> :id, :movieTitle</p>
-              <p><strong>Expected request data:</strong> Required: /id, /movieTitle</p>
-              <h4>Example:</h4>
-              <p>localhost:8080/users/1/Thor</p>
-              <p>
-                <strong>Expected response data:</strong> A message indicating the movie
-                has been removed from the user's array.
-              </p>
-              <h4>Example:</h4>
-              <code> { Thor has been removed from user 1 array! } </code>
-              <p><strong>Response status codes:</strong></p>
-              <p>200: OK- Movie has been removed from users array!</p>
-              <p>400: Bad Request- No such user!</p>
-            </div>
-            <br />
-
-            <div>
-              <h2>Get Director By Name</h2>
-              <h3>/movies/directors/:directorName</h3>
-              <h4>Method Type: GET</h4>
-              <p>
-                <strong>Description:</strong> This endpoint allows users to search for a
-                specific director by name. Endpoint returns an object with data about a specific
-                director.
-              </p>
-              <p><strong>Query Parameters:</strong> :directorName</p>
-              <p><strong>Expected request data:</strong> Required: :directorName</p>
-              <h4>Example:</h4>
-              <p>localhost:8080/movies/directors/Steven%20Spielberg</p>
-              <p>
-                <strong>Expected response data:</strong> An object containing data about
-                specific director. Every key is described with value of a string.
-              </p>
-              <h4>Example:</h4>
-              <code>
-                {<br />
-                  "Name":"Steven Spielberg"<br />
-                }
-              </code>
-              <p><strong>Response status codes:</strong></p>
-              <p>200: OK- JSON object</p>
-              <p>400: Bad request- No such director!</p>
-            </div>
+    </div>
             <br />
 
           </body>

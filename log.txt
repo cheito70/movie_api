@@ -134,3 +134,8 @@
 ::1 - - [12/Oct/2022:18:37:43 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.29.2"
 ::1 - - [12/Oct/2022:18:38:30 +0000] "GET / HTTP/1.1" 200 28 "-" "PostmanRuntime/7.29.2"
 ::1 - - [12/Oct/2022:18:39:07 +0000] "GET /documentation HTTP/1.1" 200 3216 "-" "PostmanRuntime/7.29.2"
+::1 - - [12/Oct/2022:18:40:49 +0000] "GET /movies/directors/Rob%20Reiner HTTP/1.1" 401 - "-" "PostmanRuntime/7.29.2"
+::1 - - [12/Oct/2022:18:46:38 +0000] "POST /users HTTP/1.1" 401 - "-" "PostmanRuntime/7.29.2"
+::1 - - [12/Oct/2022:18:50:04 +0000] "POST /login?Username=lolitatime79&Password=pass1234 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.29.2"
+::1 - - [12/Oct/2022:18:52:53 +0000] "POST /users HTTP/1.1" 401 - "-" "PostmanRuntime/7.29.2"
+::1 - - [12/Oct/2022:18:54:51 +0000] "POST /login?Username=lolitatime79&Password=pass1234 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.29.2"

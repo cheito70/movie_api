@@ -1,14 +1,4 @@
-//Mongoose code to access mongodb
-const mongoose = require('mongoose');
-const Models = require('./models.js');
 
-const Movies = Models.Movie;
-const Users = Models.User;
-
-//Code that allows to connect to mongodb and myFaveFlixDb
-//to perform CRUD operations
-mongoose.connect('mongodb://localhost:27017/myFaveFlixDB',
-{ useNewUrlParser: true, useUnifiedTopology: true });
 
 const express = require("express"),
   morgan = require("morgan"),
@@ -18,7 +8,7 @@ const express = require("express"),
 
 const app = express();
 const uuid = require("uuid");
-const methodOverride = require("method-override");
+//const methodOverride = require("method-override");
 
 
 //Create a write stream in append mode. Also a 'log.txt' file is created in root.
@@ -30,8 +20,20 @@ app.use(morgan("combined", {stream: accessLogStream})); //sets up logger midware
 app.use("/documentation.html", express.static("public")); //Automatically routes all requests for static files  to corresponding folder on server
 
 app.use(bodyParser.json());
-app.use(methodOverride());
+//app.use(methodOverride());
 app.use(bodyParser.urlencoded({ extended: true}));
+
+//Mongoose code to access mongodb
+const mongoose = require('mongoose');
+const Models = require('./models.js');
+
+const Movies = Models.Movie;
+const Users = Models.User;
+
+//Code that allows to connect to mongodb and myFaveFlixDb
+//to perform CRUD operations
+mongoose.connect('mongodb://localhost:27017/myFaveFlixDB',
+{ useNewUrlParser: true, useUnifiedTopology: true });
 
 let auth = require('./auth')(app); //Connects to auth.js and ensures Express is available in auth.js
 

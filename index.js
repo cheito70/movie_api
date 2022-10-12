@@ -33,9 +33,11 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(bodyParser.urlencoded({ extended: true}));
 
+let auth = require('./auth')(app); //Connects to auth.js and ensures Express is available in auth.js
+
 //Passport
-//const passport = require("passport");
-//require("./passport");
+const passport = require("passport");
+require("./passport");
 
 //Authentication
 //let auth = require("./auth")(app);

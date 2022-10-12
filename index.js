@@ -39,12 +39,6 @@ let auth = require('./auth')(app); //Connects to auth.js and ensures Express is 
 const passport = require("passport");
 require("./passport");
 
-//Authentication
-//let auth = require("./auth")(app);
-
-//Passport
-//const passport = require("passport");
-//require("./passport");
 
 //Default textual response
 app.get("/", (req, res) => {

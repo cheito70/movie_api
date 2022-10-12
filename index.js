@@ -112,7 +112,7 @@ app.get("/movies/directors/:Name", passport.authenticate('jwt', { session: false
 });
 
 //Post method for users creating the "/users" endpoint and creating new users
-app.post("/users", passport.authenticate('jwt', { session: false }), (req, res) => {
+app.post("/users", (req, res) => {
   //let hashedPassword = Users.hashedPassword(req.body.Password);
   Users.findOne({ Username: req.body.Username })
   .then((user) => {

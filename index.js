@@ -129,8 +129,8 @@ app.get("/movies/directors/:Name", passport.authenticate('jwt', { session: false
 
 //Post method for users creating the "/users" endpoint and creating new users
 app.post("/users", (req, res) => {
-  //let hashedPassword = Users.hashedPassword(req.body.Password);
-  Users.findOne({ Username: req.body.Username })
+  let hashedPassword = Users.hashPassword(req.body.Password);
+  Users.findOne({ Username: req.body.Username })//Search to see if user with requested name already exists
   .then((user) => {
     if (user) {
       return res.status(400).send(req.body.Username + " already exists");
@@ -138,7 +138,7 @@ app.post("/users", (req, res) => {
       Users
       .create({
         Username: req.body.Username,
-        Password: req.body.Password,
+        Password: hashedPassword,
         Email: req.body.Email,
         Birthday: req.body.Birthday
       })

@@ -129,7 +129,22 @@ app.get("/movies/directors/:Name", passport.authenticate('jwt', { session: false
 });
 
 //Post method for users creating the "/users" endpoint and creating new users
-app.post("/users", (req, res) => {
+app.post("/users",
+//Validation array using 'check' from 'express-validator' dependency
+[
+  check('Username', 'Username is required').isLength({ min: 5}),
+  check('Username', 'Username contains non alphaneumeric characters - not allowed.').isAlphaneumeric(),
+  check('Password', 'Password is required').not().isEmpty(),
+  check('Email', 'Email does not appear to be valid').isEmail()
+], (req, res) => {
+
+  //evaluate validations
+  let errors = validationResult(req);
+  if(!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+
+
   let hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Username: req.body.Username })//Search to see if user with requested name already exists
   .then((user) => {

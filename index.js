@@ -133,7 +133,7 @@ app.post("/users",
 //Validation array using 'check' from 'express-validator' dependency
 [
   check('Username', 'Username is required').isLength({ min: 5}),
-  check('Username', 'Username contains non alphaneumeric characters - not allowed.').isAlphaneumeric(),
+  check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()
 ], (req, res) => {

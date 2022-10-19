@@ -172,3 +172,8 @@
 ::1 - - [13/Oct/2022:16:43:52 +0000] "GET /users HTTP/1.1" 201 1278 "-" "PostmanRuntime/7.29.2"
 ::1 - - [13/Oct/2022:16:44:26 +0000] "DELETE /users/63483fc35ea3c3ac5b7a3a91 HTTP/1.1" 400 38 "-" "PostmanRuntime/7.29.2"
 ::1 - - [13/Oct/2022:16:46:26 +0000] "DELETE /users/63483fc35ea3c3ac5b7a3a91 HTTP/1.1" 400 38 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [19/Oct/2022:20:14:55 +0000] "GET /users HTTP/1.1" 201 1278 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [19/Oct/2022:20:16:41 +0000] "GET /users/arjun73 HTTP/1.1" 200 222 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [19/Oct/2022:20:34:10 +0000] "POST /users HTTP/1.1" 500 27 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [19/Oct/2022:20:35:31 +0000] "POST /login?Username=lolitatime79&Password=pass1234 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [19/Oct/2022:20:36:37 +0000] "POST /users HTTP/1.1" 500 27 "-" "PostmanRuntime/7.29.2"

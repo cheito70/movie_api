@@ -33,7 +33,7 @@ userSchema.statics.hashedPassword = (password) => {
 userSchema.methods.validatePassword = function(password)
 {
   return bcrypt.compareSync(password, this.Password);
-}
+};
 
 //Models key code that use the above schema code to enforce
 //attributes as documents are created, deleted, and updated

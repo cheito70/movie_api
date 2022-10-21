@@ -200,11 +200,25 @@ app.get("/users/:Username", passport.authenticate('jwt', { session: false }), (r
 });
 
 //User put or update method by username not id
-app.put("/users/:Username", passport.authenticate('jwt', { session: false }), (req, res) => {
-  Users.findOneAndUpdate({ Username: req.params.Username}, { $set:
+app.put("/users/:Username", passport.authenticate('jwt', { session: false }),
+[
+  check('Username', 'Username is required').isLength({ min: 5 }),
+  check('Username', 'Username contains non alphanumeric characters - notallowed.').isAlphanumeric(),
+  check('Password', 'Password is required').not().isEmpty(),
+  check('Email', 'Email does not appear to be valid').isEmail(),
+],
+(req, res) => {
+  let errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
+  let hashedPassword = Users.hashedPassword(req.body.Password);
+  Users.findOneAndUpdate({ Username: req.params.Username},
+    { $set:
       {
         Username: req.body.Username,
-        Password: req.body.Password,
+        Password: hashedPassword,
         Email: req.body.Email,
         Birthday: req.body.Birthday
       }

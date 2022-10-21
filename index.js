@@ -33,7 +33,10 @@ const Users = Models.User;
 
 //Code that allows to connect to mongodb and myFaveFlixDb
 //to perform CRUD operations
-mongoose.connect('mongodb://localhost:27017/myFaveFlixDB',
+/*mongoose.connect('mongodb://localhost:27017/myFaveFlixDB',
+{ useNewUrlParser: true, useUnifiedTopology: true });*/
+
+mongoose.connect('mongodb+srv://myfavoflixo3131:UWS0Gf8T9K1ElDav@careerfoundry1.ha1wdrw.mongodb.net/myFaveFlixDB?retryWrites=true&w=majority',
 { useNewUrlParser: true, useUnifiedTopology: true });
 
 //CORS cross-origin resource sharing, limiting access from domains to API

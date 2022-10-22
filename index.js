@@ -135,7 +135,7 @@ app.get("/movies/directors/:Name", passport.authenticate('jwt', { session: false
 app.post("/users",
 //Validation array using 'check' from 'express-validator' dependency
 [
-  check('Username', 'Username is required').isLength({ min: 5}),
+  check('Username', 'Username minimun requirement is 5 characters').isLength({ min: 5}),
   check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()
@@ -202,7 +202,7 @@ app.get("/users/:Username", passport.authenticate('jwt', { session: false }), (r
 //User put or update method by username not id
 app.put("/users/:Username", passport.authenticate('jwt', { session: false }),
 [
-  check('Username', 'Username is required').isLength({ min: 5 }),
+  check('Username', 'Username minimun requirement is 5 characters').isLength({ min: 5 }),
   check('Username', 'Username contains non alphanumeric characters - notallowed.').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail(),

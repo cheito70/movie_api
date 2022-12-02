@@ -85,13 +85,13 @@ app.get("/documentation", (req, res) => {
 
 app.get("/movies", passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
-    .then(function (movies) {
+    .then((movies) => {
       res.status(201).json(movies);
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.error(error);
       res.status(500).send("Error: " + error);
-    });
+    })
 });
 
 //Returns JSON object of a movie by title
